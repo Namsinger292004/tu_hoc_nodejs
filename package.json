@@ -1,0 +1,27 @@
+{
+    "name": "tu-hoc-nodejs",
+    "version": "1.0.0",
+    "description": "Project for learning Node.js",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Namsinger292004/tu_hoc_nodejs.git"
+    },
+    "homepage": "https://github.com/Namsinger292004/tu_hoc_nodejs#readme",
+    "keywords": [
+        "nodejs",
+        "express",
+        "mongodb"
+    ],
+    "bugs": {
+        "url": "https://github.com/Namsinger292004/tu_hoc_nodejs/issues"
+    },
+    "author": "VaNum29",
+    "license": "ISC",
+    "dependencies": {
+        "express": "5.0.1"
+    }
+}
