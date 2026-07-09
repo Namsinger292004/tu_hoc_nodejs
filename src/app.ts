@@ -1,12 +1,26 @@
 import express from "express";
+import { dirname } from "path";
+import 'dotenv/config';
+import webRouter from "./routes/web";
+
+
 const app = express();
-const PORT = 8080;
-app.get("/", (req, res) => {
-    res.send("Hello World updated");
-});
-app.get("/VaNum", (req, res) => {
-    res.send("Hello VaNum");
-});
+const PORT = process.env.PORT || 8080;
+// config view engine
+app.set("view engine", "ejs");
+app.set("views", __dirname + '/views');
+
+// config req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// config static files: images, css, javascript,...
+app.use(express.static('public'));
+
+// config routes
+webRouter(app);
+
 app.listen(PORT, () => {
     console.log(`My app is running on http://localhost:${PORT}`);
+
 });

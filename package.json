@@ -4,12 +4,25 @@
   "description": "",
   "main": "dist/app.js",
   "dependencies": {
+    "dotenv": "16.4.7",
+    "ejs": "3.1.10",
     "express": "5.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && node dist/app.js",
-    "dev": "tsc && node dist/app.js"
+    "start": "nodemon",
+    "dev": "nodemon",
+    "start:debug": "nodemon --inspect=9229 -e ts,tsx --exec node -r ts-node/register ./src/app.ts"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "ignore": [
+      "node_modules"
+    ],
+    "exec": "ts-node ./src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -23,8 +36,11 @@
   },
   "homepage": "https://github.com/Namsinger292004/tu_hoc_nodejs#readme",
   "devDependencies": {
+    "@types/ejs": "3.1.5",
     "@types/express": "5.0.0",
     "@types/node": "22.10.7",
+    "nodemon": "3.1.9",
+    "ts-node": "10.9.2",
     "typescript": "5.7.3"
   }
 }
