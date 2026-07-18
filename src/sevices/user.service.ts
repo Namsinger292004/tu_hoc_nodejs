@@ -1,7 +1,0 @@
-const handleCreateUser = (fullName: string, email: string, password: string) => {
-    //insert into database
-
-    //return result
-    console.log(">>> insert a new user")
-}
-export { handleCreateUser }
