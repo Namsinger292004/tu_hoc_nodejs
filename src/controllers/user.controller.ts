@@ -16,13 +16,13 @@ const postCreateUserPage = async (req: Request, res: Response) => {
     const { fullname, email, address } = req.body;
 
     //handle create_user
-    await handleCreateUser(fullname, email, address);
+    const a = await handleCreateUser(fullname, email, address);
     return res.redirect("/");
 }
 const postDeleteUserPage = async (req: Request<{ id: string }>, res: Response) => {
     const { id } = req.params;
 
-    await handleDeleteUser(id);
+    const a = await handleDeleteUser(id);
     return res.redirect("/");
 }
 const getViewUserPage = async (req: Request<{ id: string }>, res: Response) => {
@@ -34,7 +34,7 @@ const getViewUserPage = async (req: Request<{ id: string }>, res: Response) => {
 const postUpdateUserPage = async (req: Request<{ id: string }>, res: Response) => {
 
     const { id, fullname, email, address } = req.body;
-    await updateUserById(id, fullname, email, address);
+    const a = await updateUserById(id, fullname, email, address);
     return res.redirect("/");
 }
 export { getHomePage, getCreateUserPage, postCreateUserPage, postDeleteUserPage, getViewUserPage, postUpdateUserPage };
